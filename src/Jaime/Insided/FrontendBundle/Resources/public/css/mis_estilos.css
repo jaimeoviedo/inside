@@ -1,0 +1,115 @@
+.div_top {
+	float: left;
+	clear: both;	
+	width: 100%;
+	text-align: center;
+	border: 2px solid black;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	background-color: #CFE2F3;
+	font-size: 17px;
+}
+.div_top_posts {
+	float: left;
+	width: 33%;
+}
+.div_top_button {
+	float: left;
+	width: 33%;
+}
+.div_top_views {
+	float: left;
+	width: 33%;
+}
+.div_new_post{
+	float: left;
+	clear: both;
+	width: 100%;
+	margin-top: 5px;
+	border: 2px solid black;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	background-color: #CFE2F3;
+	font-size: 17px;
+}
+.div_new_post_titulo{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+}
+.div_new_post_image{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+.div_new_post_save{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+.div_post_list{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	border: 2px solid black;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	background-color: #CFE2F3;
+}
+.div_post{
+	float: left;
+	clear: both;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.div_post_list_titulo{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+}
+.div_post_list_image{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.loading .loader {
+	display: block
+}
+
+.loader {
+	display: none;
+	z-index: 9999999;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border: 0
+}
+.icon-loading {
+	background: url(images/ajax-loader.gif);
+	background-size: 2.875em 2.875em
+}
+
+.loader .icon-loading {
+	background-color: #000;
+	display: block;
+	margin: 0;
+	width: 2.75em;
+	height: 2.75em;
+	padding: .0625em;
+	-webkit-border-radius: 2.25em;
+	border-radius: 2.25em
+}

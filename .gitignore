@@ -1,0 +1,7 @@
+# Ignores
+\.settings
+\.project
+\.buildpath
+app/cache/
+app/logs/
+app/config/parameters.yml

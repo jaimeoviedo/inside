@@ -1,0 +1,38 @@
+ji_frontend_homepage:
+    path:     /
+    defaults: { _controller: JIFrontendBundle:Default:index }
+
+ji_add_post:
+    pattern: /addPost
+    defaults: { _controller: JIFrontendBundle:Default:addPost }
+    requirements:
+        _method: POST
+    options:
+        expose: true
+        
+ji_load_posts:
+    path:     /loadPosts
+    defaults: { _controller: JIFrontendBundle:Default:loadPosts }
+    options:
+        expose: true
+        
+ji_load_post:
+    path:    /loadPost/{id}
+    defaults: { _controller: JIFrontendBundle:Default:loadPost }
+    requirements:
+        id: \d+
+        _method: GET
+    options:
+        expose: true
+        
+ji_load_counter:
+    path:     /loadCounter
+    defaults: { _controller: JIFrontendBundle:Default:loadCounter }
+    options:
+        expose: true
+        
+ji_expor_posts:
+    path:     /exportPosts
+    defaults: { _controller: JIFrontendBundle:Default:exportPosts }
+    options:
+        expose: true

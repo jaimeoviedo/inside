@@ -1,0 +1,81 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Insided{% endblock %}
+
+{% block stylesheets%}
+	<link href="{{ asset('bundles/jifrontend/css/mis_estilos.css') }}" type="text/css" rel="stylesheet" />
+	<link href="{{ asset('bundles/jifrontend/css/toastr.css') }}" type="text/css" rel="stylesheet" />
+{% endblock%}
+
+{% block body %}
+
+	<script src="{{ asset('bundles/jifrontend/js/jquery-2.0.3.min.js') }}"></script>
+	<script src="{{ asset('bundles/jifrontend/js/models/Model.js') }}"></script>
+	<script src="{{ asset('bundles/jifrontend/js/models/PostsVM.js') }}"></script>
+	
+	<div id='div_loader' style="display: none;" class="loader">
+		<span class="icon-loading"></span>
+	</div>
+	
+	<div class='div_top'>
+		<div class='div_top_posts'>
+			#posts
+		</div>
+		<div class='div_top_button'>
+			<input type="button" value="Export" onclick="javascript:exportData();" />
+		</div>
+		<div class='div_top_views'>
+			Total Views: <span id='span_counter_views' style="display: none;" data-bind="text: counterViews">
+		</div>
+	</div>
+	
+	<div class='div_new_post'>
+		<form enctype="multipart/form-data" id="form_post" method="post">
+			<div class='div_new_post_titulo'>
+				<input type="text" placeholder="Write the title here" name='title_new_post' />
+			</div>
+			<div class='div_new_post_image'>
+				<input type='file' name='imagen' id='imagen' />
+			</div>
+			<div class='div_new_post_save'>
+				<input type="button" onclick="javascript:savePost();" value="Create New Post" />
+				<input type='reset' id='resetform' style="display: none;"/>
+			</div>
+		</form>
+	</div>
+	
+	<div class='div_post_list' style="display: none;">
+		<span data-bind="foreach: posts">
+			<div class='div_post'>
+				<div class='div_new_post_list_titulo'>
+					<span data-bind="text: title"></span> (<span data-bind="text: dia"></span> - <span data-bind="text: hora"></span>)
+				</div>
+				<div class='div_new_post_list_image'>
+					<img data-bind="attr:{src: pathImage}" style="max-width: 70%;" />
+				</div>
+			</div>
+		</span>
+	</div>
+	
+	
+{% endblock %}
+
+
+{% block javascripts %}
+
+	<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+	<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+
+	<script src="{{ asset('bundles/jifrontend/js/jquery-2.0.3.min.js') }}"></script>
+	<script src="{{ asset('bundles/jifrontend/js/knockout-3.3.0.js') }}"></script>
+	<script src="{{ asset('bundles/jifrontend/js/toastr.js') }}"></script>
+	
+	
+	<script type="text/javascript">
+		$(function () {
+			my.vm.loadData();
+			setInterval('my.vm.loadData()',15000);
+		});
+	</script>
+	
+{% endblock %}
